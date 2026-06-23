@@ -6,13 +6,13 @@ import { getStorage } from 'firebase/storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB1K2PWWWkHnFh7uhlNnjxIhYsD44eiETA",
-  authDomain: "quizlet-55b7b.firebaseapp.com",
-  projectId: "quizlet-55b7b",
-  storageBucket: "quizlet-55b7b.firebasestorage.app",
-  messagingSenderId: "410716271757",
-  appId: "1:410716271757:web:2eda5ee4cd2aede0791ec4",
-  measurementId: "G-7YNY7B1JT7"
+  apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
